@@ -7,7 +7,6 @@ def gauss_elimination(a, b):
 
     :param a:coefficient matrix
     :param b:constant matrix
-    :return:
     """
     # check coefficient matrix
     if a.shape[0] != a.shape[1]:
@@ -20,11 +19,10 @@ def gauss_elimination(a, b):
         return
 
     n = a.shape[0]  # gets number of rows from the coefficient matrix
-    solution_vector = np.zeros(n, dtype=float)  # solution vector
 
+    # TODO:
     # get the augmented matrix
     # augmented_matrix = np.concatenate((a, b), axis=1)
-    # print(a)
 
     # gauss elimination
     for k in range(n - 1):
@@ -35,8 +33,11 @@ def gauss_elimination(a, b):
             for i in range(k, n):
                 a[j][i] = a[k][i] - (dividing_factor * a[j][i])
             b[j] = b[k] - b[j] * dividing_factor
-    print(a)
+            print(a)
     print(b)
+
+# TODO: Create the solution vector
+    solution_vector = np.zeros(n, dtype=float)  # solution vector
 
 
 coefficient_matrix = np.array([[1, 1, 3], [0, 1, 3], [-1, 3, 0]], dtype=float)
